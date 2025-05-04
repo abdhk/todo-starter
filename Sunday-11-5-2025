@@ -1,0 +1,217 @@
+Python and GitHub Homework for Sunday Meeting
+This 2-hour homework is designed for three high school students (ages 14–16) to reinforce their understanding of Git, GitHub, and basic Python programming. The assignments build on the Git and GitHub tutorial provided and introduce Python coding in a collaborative, hands-on way. The goal is to review their progress, encourage collaboration, and ensure they are comfortable with version control and Python basics.
+Objectives
+
+Practice Git commands (init, add, commit, push, pull) and GitHub collaboration.
+Write and debug simple Python code.
+Work collaboratively on a shared repository and resolve merge conflicts.
+Document changes using clear commit messages and a README file.
+
+Homework Assignments
+Part 1: Individual Python Task - Personal To-Do List Program (45 minutes)
+Goal: Create a Python program in your personal GitHub repository to manage a to-do list and practice Git workflow.
+Instructions:
+
+Create a Repository:
+Create a new public GitHub repository named my-python-todo.
+Initialize it with a README.md file describing the project (e.g., "This is my Python to-do list program.").
+
+
+Write a Python Program:
+Clone the repository to your computer using git clone <repository-url>.
+Create a file named todo.py with the following functionality:
+Allow users to add a task to a to-do list.
+Display the current list of tasks.
+Mark a task as complete by removing it from the list.
+Example interaction:1. Add task
+2. View tasks
+3. Complete task
+4. Exit
+Enter choice: 1
+Enter task: Buy groceries
+Task added!
+
+
+
+
+Use a list to store tasks and a simple text-based menu (use input() and a while loop).
+
+
+Commit and Push:
+Use git add todo.py and git commit -m "Add to-do list Python program".
+Push changes to GitHub with git push origin main.
+
+
+Update README:
+Edit README.md to include instructions on how to run the program (e.g., "Run python todo.py in the terminal").
+Commit and push the updated README.
+
+
+Submit:
+Share the repository URL with the teacher via email or the class platform.
+
+
+
+Deliverables:
+
+GitHub repository URL for my-python-todo.
+A working todo.py program and an updated README.md.
+
+Sample Code for Guidance (Students should write their own, but this is a reference):
+tasks = []
+while True:
+    print("\n1. Add task\n2. View tasks\n3. Complete task\n4. Exit")
+    choice = input("Enter choice: ")
+    if choice == "1":
+        task = input("Enter task: ")
+        tasks.append(task)
+        print("Task added!")
+    elif choice == "2":
+        if tasks:
+            for i, task in enumerate(tasks, 1):
+                print(f"{i}. {task}")
+        else:
+            print("No tasks!")
+    elif choice == "3":
+        if tasks:
+            index = int(input("Enter task number to complete: ")) - 1
+            if 0 <= index < len(tasks):
+                tasks.pop(index)
+                print("Task completed!")
+            else:
+                print("Invalid task number!")
+        else:
+            print("No tasks!")
+    elif choice == "4":
+        break
+    else:
+        print("Invalid choice!")
+
+Part 2: Collaborative Python Task - Group Number Guessing Game (45 minutes)
+Goal: Collaborate on a shared repository to build a number guessing game in Python and practice resolving merge conflicts.
+Instructions:
+
+Set Up a Group Repository:
+One studentphysics student creates a public repository named group-guessing-game.
+Initialize it with a README.md file and a game.py file.
+Add all three students as collaborators under “Settings” > “Collaborators.”
+
+
+Develop the Game:
+Each student clones the repository (git clone <repository-url>).
+The game should:
+Generate a random number between 1 and 100.
+Prompt the user to guess the number, giving hints (e.g., "Too high!" or "Too low!").
+Track the number of guesses and display it when the correct number is guessed.
+Example interaction:Guess the number (1-100): 50
+Too high!
+Guess the number (1-100): 25
+Too low!
+Guess the number (1-100): 42
+Correct! You took 3 guesses.
+
+
+
+
+Each student works on a specific part in game.py:
+Student 1: Write the main game loop and user input handling.
+Student 2: Add the random number generation and comparison logic.
+Student 3: Track guesses and display the final message.
+
+
+Commit changes with clear messages (e.g., git commit -m "Add game loop and input handling").
+Push changes to GitHub (git push origin main).
+
+
+Handle Merge Conflicts:
+Intentionally create a conflict by having all students edit the same section of game.py (e.g., the initial comment block).
+Resolve the conflict by combining changes, committing, and pushing.
+
+
+Pull Changes:
+Each student pulls the final changes (git pull origin main) to ensure their local repository is up to date.
+
+
+Update README:
+One student updates README.md to describe the game and list all contributors.
+Commit and push the updated README.
+
+
+Submit:
+Share the repository URL and a screenshot of the final game.py output with the teacher.
+
+
+
+Deliverables:
+
+GitHub repository URL for group-guessing-game.
+Screenshot of the game running successfully.
+
+Sample Code for Guidance (Students should write their own, but this is a reference):
+import random
+
+number = random.randint(1, 100)
+guesses = 0
+
+while True:
+    guess = int(input("Guess the number (1-100): "))
+    guesses += 1
+    if guess > number:
+        print("Too high!")
+    elif guess < number:
+        print("Too low!")
+    else:
+        print(f"Correct! You took {guesses} guesses.")
+        break
+
+Part 3: GitHub Exploration and Reflection (30 minutes)
+Goal: Explore Python projects on GitHub and reflect on GitHub’s role in programming.
+Instructions:
+
+Find a Python Project:
+Browse GitHub for a beginner-friendly Python project (e.g., a simple game, calculator, or text-based app).
+Look for projects with clear documentation and a README.md file.
+
+
+Write a Reflection:
+In a file named reflection.txt in your my-python-todo repository, write a short paragraph (4–6 sentences) answering:
+What does the project do?
+Why is it interesting or useful?
+How does the project use GitHub (e.g., issues, pull requests, branches)?
+
+
+Example: “The project is a Python-based text adventure game where players explore a dungeon. It’s interesting because it combines storytelling with coding, which makes learning Python fun. The repository uses GitHub issues to track bugs and pull requests to add new features.”
+
+
+Commit and Push:
+Add, commit, and push reflection.txt to your my-python-todo repository.
+
+
+Submit:
+The repository URL (already submitted in Part 1) will include this file.
+
+
+
+Deliverables:
+
+reflection.txt in the my-python-todo repository.
+The GitHub URL of the explored project included in the reflection.
+
+Submission Instructions
+
+Submit all deliverables by Saturday evening via email or the class platform.
+Include:
+URL to your my-python-todo repository (Parts 1 and 3).
+URL to the group-guessing-game repository (Part 2).
+Screenshot of the number guessing game output (Part 2).
+
+
+Be prepared to demo your todo.py program and discuss your group’s game at the Sunday meeting.
+
+Tips for Success
+
+Test your Python programs before committing to ensure they run without errors.
+Use clear, descriptive commit messages (e.g., “Fix bug in task completion logic”).
+Communicate with your group via email or a group chat to coordinate changes and avoid conflicts.
+If you encounter Git or Python errors, check the error message and search online (e.g., Stack Overflow) for solutions.
+
