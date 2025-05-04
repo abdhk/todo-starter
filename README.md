@@ -1,6 +1,10 @@
 
 
+<<<<<<< HEAD
 # Introduction to Git and GitHub Tutorial for High School Students [yahia]
+=======
+# Introduction to Git and GitHub Tutorial for High School Students [Yousef]
+>>>>>>> 2ec7da038a7f97e59bbdd71786a6c13ea1bb116a
 
 This tutorial introduces high school students to Git and GitHub, focusing on basic version control concepts and collaboration. It’s designed to be simple, hands-on, and engaging for beginners.
 
